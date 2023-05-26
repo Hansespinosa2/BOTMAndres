@@ -1,0 +1,8 @@
+NEED TO TEST THIS ON A FRESH INSTALL
+folium
+openrouteservice
+numpy
+pandas
+geopy
+gspread
+oauth2client
