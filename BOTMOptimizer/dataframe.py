@@ -1,9 +1,9 @@
 import pandas as pd
 # Access Google Sheet
-from google_sheets import connect_to_sheets
+from google_sheets import connect_to_excel
 
-gclient = connect_to_sheets()
-BenWorksheet = gclient.open("Thursday Truck Logs Data Analysis").sheet1
+
+BenWorksheet = connect_to_excel("C\\Users\\hanse\\Downloads\\BOTM Database")
 rows = BenWorksheet.get_all_values()
 
 # Convert to a DataFrame
