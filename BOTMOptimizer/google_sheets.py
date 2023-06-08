@@ -16,3 +16,7 @@ def connect_to_sheets():
 # Authorize the client
     gclient = authorize(credentials)
     return gclient
+def connect_to_excel(file_path):
+    excel_data = pd.read_excel(file_path)
+    
+    return excel_data
