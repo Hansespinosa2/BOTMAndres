@@ -1,5 +1,7 @@
 import folium
 import openrouteservice as ors
+
+
 def create_map(results, df_week, depot):
     f_optimized = []
 
@@ -21,12 +23,12 @@ def create_map(results, df_week, depot):
             long = float(row['LONG'])
 
             tooltip = folium.Tooltip(
-                """<h5>{LOCATION} / {ALIAS} </h5>
+                """<h5>{LOCATION} / {ALIAS}</h5>
                 <b>Address:</b> {ADDRESS} <br>
                 <b>Location:</b> ({LAT}, {LONG}) <br>
                 """.format(**row)
             )
-          
+
             folium.Marker(
                 location=(lat, long),
                 tooltip=tooltip
@@ -47,7 +49,7 @@ def create_map(results, df_week, depot):
                 },
                 style_function=lambda x: {"color": x['properties']['color']}
             )
-            
+
             route["miles"] = round(route["distance"] / 1000 * 0.621371, 1)
             route["hrs"] = route["duration"] // 3600
             route["mins"] = round((route["duration"] % 3600) / 60)
