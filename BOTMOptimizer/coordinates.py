@@ -2,7 +2,7 @@ from google_sheets import connect_to_excel
 import pandas as pd
 from geocoding import find_lat,find_long
 from gspread import Cell
-worksheet = connect_to_excel("C\\Users\\hanse\\Downloads\\BOTM Database")
+worksheet = connect_to_excel("C:\\Users\\hanse\\Downloads\\BOTM Database")
 rows = worksheet.get_all_values()
 
 # Convert to a DataFrame
