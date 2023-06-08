@@ -1,10 +1,10 @@
 from setuptools import setup
 
 setup(
-    name='BOTMwv',
+    name='BOTMOptimizer',
     version='1.0',
-    author='BallingOut',
-    packages=['BOTMwv'],
+    author='BOTMTeam',
+    packages=['BOTMOptimizer'],
     install_requires=[
         'folium',
         'openrouteservice',
