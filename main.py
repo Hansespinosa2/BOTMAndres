@@ -33,9 +33,10 @@ pickups_week = create_pickups(df_week, DEFAULT_SERVICE_TIME)
 
 
 
+
 # Call the optimize function
 results = optimize.optimize(pickups_week, df_week, vehicles, depot, days)
 
 # Call the create_map function
 f_optimized = create_map.create_map(results, df_week, depot)
-f_optimized[days['R']]
+f_optimized[days['T']]
