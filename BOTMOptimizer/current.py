@@ -1,5 +1,5 @@
 # CURRENT BOTM ROUTES
-
+def current_map():
 f_current = []
 days_list = list(days.keys())
 
