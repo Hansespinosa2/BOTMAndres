@@ -1,12 +1,8 @@
-from os import truncate
-from folium.plugins import BeautifyIcon
 import pandas as pd
 from gspread import authorize
 from oauth2client.service_account import ServiceAccountCredentials
-from pandas._libs.hashtable import value_count
-from file_connect import connect_to_sheets,connect_to_excel, column_titles,fix_df
+from file_connect import connect_to_sheets, connect_to_excel, column_titles, fix_df
 import re
-
 
 def process_worksheet():
     worksheet = connect_to_excel("C:\\Users\\hanse\\Downloads\\BOTM Database.xlsx")
@@ -23,6 +19,5 @@ def process_worksheet():
     df_thurs = df[df['THURS'] != ''].sort_values(by=['THURS'])
     df_fri = df[df['FRI'] != ''].sort_values(by=['FRI'])
     df_week = [df_mon, df_tues, df_wed, df_thurs, df_fri]
-
 
     return df_week
