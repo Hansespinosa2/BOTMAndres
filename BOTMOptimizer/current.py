@@ -1,6 +1,8 @@
-# CURRENT BOTM ROUTES
-def current_map():
-f_current = []
+import folium
+
+
+def current_map(results, df_week, depot):
+    f_current = []
 days_list = list(days.keys())
 
 for day_ind in range(len(days_list)):
@@ -105,3 +107,4 @@ for day_ind in range(len(days_list)):
 
     folium.LayerControl().add_to(temp_map)
     f_current.append(temp_fig)
+return f_current
