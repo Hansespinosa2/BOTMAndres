@@ -1,7 +1,6 @@
 import openrouteservice as ors
 
 
-
 def create_vehicles(MAX_VEHICLES, depot, MAX_CAPACITY):
     vehicles = []
     for idx in range(MAX_VEHICLES):
@@ -15,6 +14,7 @@ def create_vehicles(MAX_VEHICLES, depot, MAX_CAPACITY):
             )
         )
     return vehicles
+
 
 def create_pickups(df_week, DEFAULT_SERVICE_TIME):
     pickups_week = []
@@ -33,5 +33,3 @@ def create_pickups(df_week, DEFAULT_SERVICE_TIME):
                 )
             )
     return pickups_week
-
-
