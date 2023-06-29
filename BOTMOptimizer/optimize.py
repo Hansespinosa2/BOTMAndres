@@ -11,6 +11,7 @@ def optimize(pickups_week, df_week, vehicles, depot, days):
         df_today = df_week[day_ind]
 
         ors_client = ors.Client(key='5b3ce3597851110001cf62489217d34c333d469aa2034e367d70cb0a')
+        # ors_client = ors.Client(base_url='https://localhost:8080/ors/v2/optimization')
         result = ors_client.optimization(
             jobs=pickups_today,
             vehicles=vehicles,
