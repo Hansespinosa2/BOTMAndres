@@ -2,6 +2,7 @@ from gspread import authorize
 from oauth2client.service_account import ServiceAccountCredentials
 import pandas as pd
 from geocoding import find_lat, find_long
+from path_directories import DATABASE_EXCEL
 
 
 def connect_to_sheets():
@@ -35,7 +36,7 @@ def column_titles(file_path):
 def fix_df(worksheet):
     # gclient = connect_to_sheets()
     # Convert to a DataFrame
-    columns = column_titles("C:\\Users\\hanse\\Downloads\\BOTM Database.xlsx")
+    columns = column_titles(DATABASE_EXCEL)
     df = pd.DataFrame.from_records(worksheet, columns=columns)
     new_df = df[(df['LAT'] == '') | (df['LONG'] == '')]
 
