@@ -2,11 +2,13 @@ import pandas as pd
 from gspread import authorize
 from oauth2client.service_account import ServiceAccountCredentials
 from file_connect import connect_to_sheets, connect_to_excel, column_titles, fix_df
+from path_directories import DATABASE_EXCEL
 import re
 
+
 def process_worksheet():
-    worksheet = connect_to_excel("C:\\Users\\hanse\\Downloads\\BOTM Database.xlsx")
-    columns = column_titles("C:\\Users\\hanse\\Downloads\\BOTM Database.xlsx")
+    worksheet = connect_to_excel(DATABASE_EXCEL)
+    columns = column_titles(DATABASE_EXCEL)
     df = fix_df(worksheet)
 
     df = df[df['LAT'].apply(lambda x: not re.search("[A-Za-z]", str(x)))]
